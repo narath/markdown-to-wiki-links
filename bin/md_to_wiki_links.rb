@@ -1,4 +1,6 @@
 # Convert markdown to mediawiki links
+require "rubygems"
+require_relative "../lib/link_converter"
 
 def usage
   puts "md_to_wiki_links.rb FILENAME"
@@ -18,4 +20,4 @@ unless File.exists?(filename)
 end
 
 contents = File.read(filename)
-puts convert_links(contents)
+puts LinkConverter.convert(contents)
